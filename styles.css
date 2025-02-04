@@ -31,7 +31,6 @@
 * {
   box-sizing: border-box;
   font-family: "Helvetica-Neue", "Helvetica", sans-serif;
-  ;
   /* 10px = 1rem */
   font-size: 62.5%;
   margin: 0;
@@ -154,9 +153,9 @@ body {
 
 .banner-text {
   color: #fff;
-  font-size: 14px;
-  font-weight: 800;
-  margin: 10px;
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: .7rem;
 }
 
 /* navbar */
@@ -166,9 +165,9 @@ body {
   width: 100%;
   max-width: 1440px;
   flex-direction: column;
-  padding-top: 50px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-top: 3rem;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
 }
 
 .navbar {
@@ -177,19 +176,19 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
 }
 
 .navbar--container-logo {
-  height: 60px;
-  max-height: 60px;
-  width: 60px;
-  max-width: 60px;
+  height: 6rem;
+  max-height: 6rem;
+  width: 6rem;
+  max-width: 6rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
+  border-radius: 0.8rem;
 }
 
 .navbar--logo {
@@ -202,7 +201,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 8px;
+  gap: 0.8rem;
 }
 
 .navbar--item-search-button,
@@ -211,20 +210,20 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
-  max-height: 40px;
-  width: 40px;
-  max-width: 40px;
-  padding: 2px;
-  border-radius: 8px;
+  height: 4rem;
+  max-height: 4rem;
+  width: 4rem;
+  max-width: 4rem;
+  padding: 0.2rem;
+  border-radius: 0.8rem;
   background-color: transparent;
 }
 
 .navbar--item-search-icon,
 .navbar--item-cart-icon,
 .navbar--item-menu-icon {
-  height: 24px;
-  width: 24px;
+  height: 2.4rem;
+  width: 2.4rem;
 }
 
 /* hero carousel */
@@ -235,7 +234,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 8px;
+  padding: 0.8rem;
 }
 
 .hero--carousel-button-left,
@@ -243,12 +242,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
-  max-height: 40px;
-  width: 40px;
-  max-width: 40px;
-  padding: 2px;
-  border-radius: 8px;
+  height: 4rem;
+  max-height: 4rem;
+  width: 4rem;
+  max-width: 4rem;
+  padding: 0.2rem;
+  border-radius: 0.8rem;
   background-color: transparent;
   filter: opacity(.5);
 }
@@ -259,7 +258,7 @@ body {
 }
 
 .hero--carousel-container {
-  gap: 4px;
+  gap: 0.4rem;
   display: flex;
   flex-direction: row;
   overflow: hidden;
@@ -274,7 +273,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-width: 180px;
+  min-width: 18rem;
   justify-content: center;
   align-items: center;
   flex: 0 0 100%;
@@ -295,7 +294,7 @@ body {
 .hero--carousel--item-three-link {
   background-color: transparent;
   width: fit-content;
-  font-size: 13px;
+  font-size: 1.3rem;
   color: #000;
   text-decoration: underline;
   text-align: center;
@@ -306,7 +305,6 @@ body {
   font-size: 11px;
 }
 
-/**/
 @keyframes slide {
   0% {
     transform: translateX(0);
@@ -335,7 +333,7 @@ body {
   display: flex;
   min-height: 240px;
   width: 100%;
-  margin-bottom: 4px;
+  margin-bottom: 0.4rem;
 }
 
 .hero--banner--image-one,
@@ -347,26 +345,191 @@ body {
 
 .hero--banner--container-image-two {
   display: flex;
-  min-height: 470px;
+  min-height: 47rem;
   width: 100%;
 }
 
+.hero--banner--title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.hero--banner--title {
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: -0.001rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hero--banner--title-subtitle {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.hero--banner--title-button {
+  background-color: #111;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 100rem;
+  padding: 1rem 2.8rem;
+  text-align: center;
+  transition: opacity .2s;
+}
+
+.hero--banner--title-button:hover {
+  opacity: .7;
+}
+
+/* best sellers section */
+
+.best--sellers {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.best--sellers--container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4rem;
+  overflow: hidden;
+}
+
+.subtitle {
+  font-size: 2.4rem;
+  margin: 2.4rem;
+  font-weight: 400;
+  color: #000;
+}
+
+.best--sellers--slider {
+  gap: 0.6rem;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding-left: 18px;
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+/* Tamaño del scroll */
+.best--sellers--slider::-webkit-scrollbar {
+  height: .6rem;
+}
+
+/* Estilos barra (thumb) de scroll */
+.best--sellers--slider::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: .2rem;
+  -webkit-border-radius: .2rem;
+  -moz-border-radius: .2rem;
+  -ms-border-radius: .2rem;
+  -o-border-radius: .2rem;
+}
+
+.best--sellers--slider::-webkit-scrollbar-thumb:active {
+  background-color: #010101;
+}
+
+.best--sellers--slider::-webkit-scrollbar-thumb:hover {
+  background: #010101;
+}
+
+/* Estilos track de scroll */
+.best--sellers--slider::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: .2rem;
+  -webkit-border-radius: .2rem;
+  -moz-border-radius: .2rem;
+  -ms-border-radius: .2rem;
+  -o-border-radius: .2rem;
+}
+
+.best--sellers--slider::-webkit-scrollbar-track:hover,
+.best--sellers--slider::-webkit-scrollbar-track:active {
+  background: transparent;
+}
+
+.best--sellers--slider-item {
+  flex: 1 1 auto;
+  position: relative;
+  width: 24rem;
+  margin-bottom: 3.8rem;
+}
+
+.best--sellers--slider-article {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.best--sellers--slider-img-container {
+  padding: 0.6rem;
+  display: block;
+  width: 24rem;
+}
+
+.best--sellers--slider-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.best--sellers--slider-title {
+  font-size: 1.6rem;
+  color: #000;
+  line-height: 2.1rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.best--sellers--slider-supporting-text {
+  font-size: 1.6rem;
+  color: #757575;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: start;
+  font-weight: 400;
+}
+
+.best--sellers--slider-price {
+  font-size: 1.6rem;
+  color: #000;
+  font-weight: 700;
+}
+
+/* WhatsApp button */
+
 .whatsapp--link {
-  height: 50px;
-  min-height: 50px;
-  width: 50px;
-  min-width: 50px;
+  height: 5rem;
+  min-height: 5rem;
+  width: 5rem;
+  min-width: 5rem;
   border-radius: 100%;
   background-color: #00bb2d;
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 2rem;
+  right: 2rem;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 2;
 }
 
 .whatsapp--icon {
-  height: 34px;
-  width: 34px;
+  height: 3.4rem;
+  width: 3.4rem;
 }
