@@ -421,12 +421,14 @@ body {
 }
 
 /* Tamaño del scroll */
-.best--sellers--slider::-webkit-scrollbar {
+.best--sellers--slider::-webkit-scrollbar,
+.categories--slider::-webkit-scrollbar {
   height: .6rem;
 }
 
 /* Estilos barra (thumb) de scroll */
-.best--sellers--slider::-webkit-scrollbar-thumb {
+.best--sellers--slider::-webkit-scrollbar-thumb,
+.categories--slider::-webkit-scrollbar-thumb {
   background-color: transparent;
   border-radius: .2rem;
   -webkit-border-radius: .2rem;
@@ -435,16 +437,19 @@ body {
   -o-border-radius: .2rem;
 }
 
-.best--sellers--slider::-webkit-scrollbar-thumb:active {
+.best--sellers--slider::-webkit-scrollbar-thumb:active,
+.categories--slider::-webkit-scrollbar-thumb:active {
   background-color: #010101;
 }
 
-.best--sellers--slider::-webkit-scrollbar-thumb:hover {
+.best--sellers--slider::-webkit-scrollbar-thumb:hover,
+.categories--slider::-webkit-scrollbar-thumb:hover {
   background: #010101;
 }
 
 /* Estilos track de scroll */
-.best--sellers--slider::-webkit-scrollbar-track {
+.best--sellers--slider::-webkit-scrollbar-track,
+.categories--slider::-webkit-scrollbar-track {
   background: transparent;
   border-radius: .2rem;
   -webkit-border-radius: .2rem;
@@ -454,7 +459,9 @@ body {
 }
 
 .best--sellers--slider::-webkit-scrollbar-track:hover,
-.best--sellers--slider::-webkit-scrollbar-track:active {
+.best--sellers--slider::-webkit-scrollbar-track:active,
+.categories--slider::-webkit-scrollbar-track:hover,
+.categories--slider::-webkit-scrollbar-track:active {
   background: transparent;
 }
 
@@ -508,6 +515,74 @@ body {
   font-size: 1.6rem;
   color: #000;
   font-weight: 700;
+}
+
+/* Categories */
+
+.categories {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.categories--slider {
+  gap: 1.4rem;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding-left: 18px;
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.categories--slider-item {
+  flex: 1 1 auto;
+  position: relative;
+  width: 24rem;
+  margin-bottom: 3.8rem;
+}
+
+.categories--slider-article {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+.categories--slider-img-container {
+  display: block;
+  width: 24rem;
+}
+
+.categories--slider-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.categories--slider-button {
+  background-color: #fff;
+  color: #1f0f0f;
+  position: absolute;
+  bottom: .5rem;
+  left: 1rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  padding-left:  2.8rem;
+  padding-right: 2.8rem;
+  border-radius: 100rem;
+  min-height: 4rem;
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .2s;
+}
+
+.categories--slider-button:hover {
+  opacity: .7;
 }
 
 /* WhatsApp button */
