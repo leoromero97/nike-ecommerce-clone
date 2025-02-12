@@ -569,7 +569,7 @@ body {
   left: 1rem;
   font-weight: 600;
   font-size: 1.4rem;
-  padding-left:  2.8rem;
+  padding-left: 2.8rem;
   padding-right: 2.8rem;
   border-radius: 100rem;
   min-height: 4rem;
@@ -583,6 +583,43 @@ body {
 
 .categories--slider-button:hover {
   opacity: .7;
+}
+
+.footerOne {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion {
+  margin: 2.8rem;
+}
+
+.accordion-button {
+  width: 100%;
+  background-color: transparent;
+  text-align: left;
+  color: #111;
+  font-size: 1.6rem;
+  padding: 1.6rem 0;
+  font-weight: 600;
+}
+
+.accordion-content {
+  padding: 0 2rem;
+}
+
+.accordion-content-hide {
+  display: none;
+}
+
+.accordion-item {
+  display: flex;
+  width: 100%;
+  color: #757575;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.6rem;
 }
 
 /* WhatsApp button */
