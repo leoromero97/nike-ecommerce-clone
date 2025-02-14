@@ -585,6 +585,17 @@ body {
   opacity: .7;
 }
 
+/* Banner footer */
+
+.banner-footer {
+  display: flex;
+  width: 100%;
+}
+
+.banner-footer-image {
+  width: 100%;
+}
+
 .footerOne {
   width: 100%;
   display: flex;
@@ -620,6 +631,121 @@ body {
   text-decoration: none;
   font-weight: 500;
   font-size: 1.6rem;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #111;
+  color: #fff;
+  padding: 3.8rem 2rem;
+}
+
+.footer--subtitle-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.footer--subtitle {
+  display: flex;
+  width: 100%;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 2.8rem 0;
+}
+
+.footer--links-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.footer--accordion--button {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  color: #fff;
+  background-color: transparent;
+  border-top: 1px solid #2e2e2f;
+  border-bottom: 1px solid #2e2e2f;
+  padding: 1.2rem 0;
+  text-transform: uppercase;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.footer--accordion--link {
+  font-size: 1.4rem;
+  color: #7e7e7e;
+  font-weight: 600;
+}
+
+.footer--accordion--regret-button {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.footer--accordion--link-more {
+  color: #7e7e7e;
+  text-decoration: underline;
+  font-size: 1.4rem;
+  text-transform: none;
+}
+
+.footer--accordion--link-light {
+  font-size: 1.4rem;
+  color: #b0b0b0;
+  font-weight: 600;
+}
+
+.footer-img-fiscal {
+  padding: 0.4rem 0;
+  margin: 1rem;
+}
+
+.footer--social-media-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer--social-media-link {
+  margin: 1rem;
+  opacity: .5;
+}
+
+.footer--others-links {
+  padding: 4.6rem 0 .5rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer--others-links--link {
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: .4rem;
+}
+
+.footer--others-links--description {
+  color: #7e7e7e;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.footer--others-links--link-gray {
+  color: #7e7e7e;
+  font-size: 1.2rem;
+  margin: .5rem 0;
 }
 
 /* WhatsApp button */
