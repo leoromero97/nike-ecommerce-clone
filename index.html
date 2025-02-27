@@ -37,13 +37,28 @@
             </button>
           </li>
           <li>
-            <a href="cart" class="navbar--item-cart-container">
+            <button href="cart" class="navbar--item-cart-container" id="cartButton">
               <img
                 src="./assets/icons/icon-cart.svg"
                 alt="icono carrito"
                 class="navbar--item-cart-icon"
               />
-            </a>
+              <div id="cart">
+                <table id="cartList">
+                  <thead>
+                    <tr>
+                      <th>Imagen</th>
+                      <th>Nombre</th>
+                      <th>Precio</th>
+                      <th>Cantidad</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+                <a id="cartButtonClean">Limpiar carrito</a>
+              </div>
+            </button>
           </li>
           <li>
             <button class="navbar--item-menu-button">
@@ -136,7 +151,7 @@
           <h2 class="subtitle">Más vendidos</h2>
           <ul class="best--sellers--slider">
             <li class="best--sellers--slider-item">
-              <a href="">
+              <a id="nikeAirForce1Le">
                 <article class="best--sellers--slider-article">
                   <div class="best--sellers--slider-img-container">
                     <img
@@ -154,10 +169,11 @@
                   </p>
                   <span class="best--sellers--slider-price">$ 179.999</span>
                 </article>
+                <button class="best--sellers-button">Agregar al carrito</button>
               </a>
             </li>
             <li class="best--sellers--slider-item">
-              <a href="">
+              <a id="nikeClubFleece">
                 <article class="best--sellers--slider-article">
                   <div class="best--sellers--slider-img-container">
                     <img
@@ -175,10 +191,11 @@
                   </p>
                   <span class="best--sellers--slider-price">$ 69.999</span>
                 </article>
+                <button class="best--sellers-button">Agregar al carrito</button>
               </a>
             </li>
             <li class="best--sellers--slider-item">
-              <a href="">
+              <a id="nikeCourtBoroughLowRecraft">
                 <article class="best--sellers--slider-article">
                   <div class="best--sellers--slider-img-container">
                     <img
@@ -196,10 +213,11 @@
                   </p>
                   <span class="best--sellers--slider-price">$ 99.999</span>
                 </article>
+                <button class="best--sellers-button">Agregar al carrito</button>
               </a>
             </li>
             <li class="best--sellers--slider-item">
-              <a href="">
+              <a id="nikeRevolution7">
                 <article class="best--sellers--slider-article">
                   <div class="best--sellers--slider-img-container">
                     <img
@@ -217,10 +235,11 @@
                   </p>
                   <span class="best--sellers--slider-price">$ 87.999</span>
                 </article>
+                <button class="best--sellers-button">Agregar al carrito</button>
               </a>
             </li>
             <li class="best--sellers--slider-item">
-              <a href="">
+              <a id="nikeFlexRunner3">
                 <article class="best--sellers--slider-article">
                   <div class="best--sellers--slider-img-container">
                     <img
@@ -238,6 +257,7 @@
                   </p>
                   <span class="best--sellers--slider-price">$ 76.999</span>
                 </article>
+                <button class="best--sellers-button">Agregar al carrito</button>
               </a>
             </li>
           </ul>
@@ -510,4 +530,5 @@
       />
     </a>
   </body>
+  <script src="./js/cart.js"></script>
 </html>
