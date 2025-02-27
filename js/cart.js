@@ -1,6 +1,6 @@
 const cart = document.querySelector("#cart");
 const cartList = document.querySelector("#cartList tbody");
-const cartButtonClean = document.querySelector("#cartButtonClean");
+const clearCartButton = document.querySelector("#cartButtonClean");
 const bestSellersSlider = document.querySelector(".best--sellers--slider");
 let cartArticles = [];
 
@@ -11,48 +11,50 @@ const buttonItem = document.querySelectorAll(
 mainEventListeners();
 
 function mainEventListeners() {
-  bestSellersSlider.addEventListener("click", addCourse);
-  cart.addEventListener("click", deleteCourse);
-  cartButtonClean.addEventListener("click", clearCart);
+  bestSellersSlider.addEventListener("click", addProduct);
+  cart.addEventListener("click", removeProduct);
+  clearCartButton.addEventListener("click", clearCart);
 }
 
-function addCourse(e) {
+function addProduct(e) {
   e.preventDefault();
   if (e.target.classList.contains("best--sellers-button")) {
-    const courseSelected = e.target.parentElement;
-    readDataByCourse(courseSelected);
+    const productSelected = e.target.parentElement;
+    getProductData(productSelected);
   }
 }
 
-function readDataByCourse(course) {
-  const courseData = {
-    id: course.getAttribute("id"),
-    image: course.querySelector("img").src,
-    title: course.querySelector(".best--sellers--slider-title").textContent,
-    price: course.querySelector(".best--sellers--slider-price").textContent,
+function getProductData(product) {
+  const productData = {
+    id: product.getAttribute("id"),
+    image: product.querySelector("img").src,
+    title: product.querySelector(".best--sellers--slider-title").textContent,
+    price: product.querySelector(".best--sellers--slider-price").textContent,
     count: 1,
   };
 
-  const hasCourse = cartArticles.some((course) => course.id === courseData.id);
+  const hasProduct = cartArticles.some(
+    (product) => product.id === productData.id
+  );
 
-  if (hasCourse) {
-    const courses = cartArticles.map((course) => {
-      if (course.id === courseData.id) {
-        course.count++;
-        return course;
+  if (hasProduct) {
+    const products = cartArticles.map((product) => {
+      if (product.id === productData.id) {
+        product.count++;
+        return product;
       } else {
-        return course;
+        return product;
       }
     });
 
-    cartArticles = [...courses];
+    cartArticles = [...products];
   } else {
-    cartArticles = [...cartArticles, courseData];
+    cartArticles = [...cartArticles, productData];
   }
 
   addCartInHtml();
 
-  return courseData;
+  return productData;
 }
 
 function addCartInHtml() {
@@ -88,19 +90,28 @@ function clearHtml() {
   }
 }
 
-function deleteCourse(e) {
+function removeProduct(e) {
   e.preventDefault();
 
   if (e.target.classList.contains("cartButtonDeleted")) {
-    const courseId = e.target.getAttribute("data-id");
-    cartArticles = cartArticles.filter((course) => course.id !== courseId);
-    // mejorar lógica para borrar cantidades y no toda la fila
-    addCartInHtml();
+    const productId = e.target.getAttribute("data-id");
+    const productIndex = cartArticles.findIndex(
+      (product) => product.id === productId
+    );
+
+    if (productIndex !== -1) {
+      if (cartArticles[productIndex].count > 1) {
+        cartArticles[productIndex].count--;
+      } else {
+        cartArticles.splice(productIndex, 1);
+      }
+      addCartInHtml();
+    }
   }
 }
 
 function clearCart(e) {
   e.preventDefault();
   cartArticles = [];
-  clearHtml()
+  clearHtml();
 }
