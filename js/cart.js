@@ -3,6 +3,8 @@ const cartList = document.querySelector("#cartList tbody");
 const clearCartButton = document.querySelector("#cartButtonClean");
 const bestSellersSlider = document.querySelector(".best--sellers--slider");
 let cartArticles = [];
+const cartButtonIcon = document.querySelector("#cartButton");
+const cartButtonClose = document.querySelector("#cartButtonClose");
 
 const buttonItem = document.querySelectorAll(
   ".best--sellers--slider-item button"
@@ -14,6 +16,16 @@ function mainEventListeners() {
   bestSellersSlider.addEventListener("click", addProduct);
   cart.addEventListener("click", removeProduct);
   clearCartButton.addEventListener("click", clearCart);
+  cartButtonIcon.addEventListener("click", toggleVisibleCart);
+  cartButtonClose.addEventListener("click", toggleVisibleCart);
+}
+
+function toggleVisibleCart() {
+  if (cart.style.display === "none") {
+    cart.style.display = "flex";
+  } else {
+    cart.style.display = "none";
+  }
 }
 
 function addProduct(e) {

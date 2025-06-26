@@ -36,29 +36,32 @@
               />
             </button>
           </li>
-          <li>
-            <button href="cart" class="navbar--item-cart-container" id="cartButton">
+          <li class="navbar--item-cart-container">
+            <button href="cart" class="navbar--item-cart-button" id="cartButton">
               <img
                 src="./assets/icons/icon-cart.svg"
                 alt="icono carrito"
                 class="navbar--item-cart-icon"
               />
-              <div id="cart">
-                <table id="cartList">
-                  <thead>
-                    <tr>
-                      <th>Imagen</th>
-                      <th>Nombre</th>
-                      <th>Precio</th>
-                      <th>Cantidad</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody></tbody>
-                </table>
-                <a id="cartButtonClean">Limpiar carrito</a>
-              </div>
             </button>
+            <div id="cart">
+              <table id="cartList">
+                <thead>
+                  <tr>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+              <div class="cart--buttons-container">
+                <a id="cartButtonClean">Limpiar</a>
+                <a id="cartButtonClose">Cerrar</a>
+              </div>
+            </div>
           </li>
           <li>
             <button class="navbar--item-menu-button">
