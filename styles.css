@@ -170,6 +170,7 @@ body {
   padding-top: 6rem;
   padding-left: 1.6rem;
   padding-right: 1.6rem;
+  align-items: center;
 }
 
 .navbar {
@@ -230,7 +231,7 @@ body {
 
 .navbar--item-cart-container {
   position: relative;
-    display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -261,7 +262,7 @@ body {
 }
 
 #cartList thead tr,
-#cartList tbody tr{
+#cartList tbody tr {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
@@ -280,7 +281,8 @@ body {
   flex-direction: column;
 }
 
-#cartButtonClean, #cartButtonClose {
+#cartButtonClean,
+#cartButtonClose {
   background-color: #111;
   color: #fff;
   font-weight: 600;
@@ -330,6 +332,7 @@ body {
   max-width: 24px;
   font-size: .8rem;
 }
+
 /* hero carousel */
 
 .hero--carousel {
@@ -427,15 +430,28 @@ body {
   }
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
 .hero--banner {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+}
+
+.hero--banner-images {
   display: flex;
   flex-direction: column;
 }
 
 .hero--banner--container-image-one {
   display: flex;
-  min-height: 240px;
+  /* min-height: 47rem; */
   width: 100%;
   margin-bottom: 0.4rem;
 }
@@ -449,8 +465,20 @@ body {
 
 .hero--banner--container-image-two {
   display: flex;
-  min-height: 47rem;
+  /* min-height: 47rem; */
   width: 100%;
+}
+
+@media (min-width: 657px) {
+  .hero--banner-images {
+    flex-direction: row;
+    height: 50rem;
+  }
+
+  .hero--banner--image-one,
+  .hero--banner--image-two {
+    object-position: top;
+  }
 }
 
 .hero--banner--title-container {
@@ -498,6 +526,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
+  max-width: 1440px;
 }
 
 .best--sellers--container {
@@ -629,6 +658,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
+  max-width: 1440px;
 }
 
 .categories--slider {
@@ -696,16 +726,49 @@ body {
 .banner-footer {
   display: flex;
   width: 100%;
+  max-width: 1440px;
 }
 
+.banner-footer-image-container,
 .banner-footer-image {
   width: 100%;
 }
 
-.footerOne {
+.footer-one {
   width: 100%;
   display: flex;
   flex-direction: column;
+  max-width: 1440px;
+}
+
+.footer-one--list {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 657px) {
+  .footer-one {
+    align-items: center;
+  }
+
+  .footer-one--list {
+    flex-direction: row;
+  }
+
+  .banner-footer-image-container {
+    height: 39rem;
+    background-image: url("https://nikearprod.vtexassets.com/assets/vtex.file-manager-graphql/images/4cb8cd5e-f13d-4681-b0ea-04e0bed44a4d___fc0e6ad7beb350f79815f46566147910.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    background-position-y: -32rem;
+  }
+
+  .banner-footer-image {
+    height: 100%;
+    object-fit: cover;
+    display: none;
+  }
 }
 
 .accordion {
@@ -744,8 +807,22 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #111;
-  color: #fff;
   padding: 3.8rem 2rem;
+  width: 100%;
+  align-items: center;
+}
+
+.footer-main-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  color: #fff;
+  width: 100%;
+}
+
+.footer--leading-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .footer--subtitle-container {
@@ -845,7 +922,6 @@ body {
 .footer--others-links--description {
   color: #7e7e7e;
   font-size: 1.2rem;
-  margin-bottom: 2rem;
 }
 
 .footer--others-links--link-gray {
@@ -853,6 +929,34 @@ body {
   font-size: 1.2rem;
   margin: .5rem 0;
 }
+
+.footer--others-links-leading-container,
+.footer--others-links-trailing-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+@media (min-width: 657px) {
+  .footer--leading-container {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .footer--others-links {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .footer--others-links-leading-container,
+  .footer--others-links-trailing-container {
+    flex-direction: row;
+    gap: 2.4rem;
+    align-items: center;
+  }
+}
+
 
 /* WhatsApp button */
 
