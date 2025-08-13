@@ -1,3 +1,7 @@
+const carouselContainer = document.querySelector(".hero--carousel-container");
+const carouselItems = document.querySelectorAll(".hero--carousel--item");
+const prevBtn = document.querySelector(".hero--carousel-button-left");
+const nextBtn = document.querySelector(".hero--carousel-button-right");
 const cart = document.querySelector("#cart");
 const cartList = document.querySelector("#cartList tbody");
 const clearCartButton = document.querySelector("#cartButtonClean");
@@ -18,8 +22,68 @@ function mainEventListeners() {
   clearCartButton.addEventListener("click", clearCart);
   cartButtonIcon.addEventListener("click", toggleVisibleCart);
   cartButtonClose.addEventListener("click", toggleVisibleCart);
-}
+  nextBtn.addEventListener("click", () => {
+    startAutoSlide();
+    nextSlide();
+  });
 
+  prevBtn.addEventListener("click", () => {
+    startAutoSlide();
+    prevSlide();
+  });
+}
+// carousel logic
+
+let currentIndex = 0;
+let autoSlideInterval;
+
+const updateCarousel = () => {
+  carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+};
+
+const startAutoSlide = () => {
+  clearInterval(autoSlideInterval);
+  autoSlideInterval = setInterval(() => {
+    nextSlide();
+  }, 3000);
+};
+
+const nextSlide = () => {
+  if (currentIndex >= carouselItems.length - 1) {
+    currentIndex = 0;
+    // Aplicamos un pequeño retraso antes de reiniciar la animación.
+    // Esto es para que el cambio de posición sea instantáneo y no haya un "salto" visible.
+    setTimeout(() => {
+      // Quitamos la transición momentáneamente para el "salto" rápido
+      carouselContainer.style.transition = "none";
+      // Volvemos al primer item sin animación
+      updateCarousel();
+      // Después de un instante, volvemos a poner la transición para el resto de la animación
+      setTimeout(() => {
+        carouselContainer.style.transition = "transform 0.5s ease-in-out";
+      }, 50);
+    }, 50);
+  } else {
+    currentIndex++;
+  }
+  updateCarousel();
+};
+
+// Función para ir al slide anterior
+const prevSlide = () => {
+  // Si estamos en el primer slide, vamos al último
+  if (currentIndex <= 0) {
+    currentIndex = carouselItems.length - 1;
+  } else {
+    currentIndex--;
+  }
+  updateCarousel();
+};
+
+// Inicializamos el carrusel automático
+startAutoSlide();
+
+// cart logic
 function toggleVisibleCart() {
   if (cart.style.display === "none") {
     cart.style.display = "flex";
@@ -72,6 +136,9 @@ function getProductData(product) {
 function addCartInHtml() {
   clearHtml();
 
+    // Calcula el total de productos sumando los count de cada artículo
+  const totalCount = cartArticles.reduce((acc, item) => acc + item.count, 0);
+
   cartArticles.forEach(({ image, title, price, count, id }) => {
     const tableRow = document.createElement("tr");
     tableRow.innerHTML = `
@@ -94,6 +161,18 @@ function addCartInHtml() {
     tableRow.classList.add("cartRow");
     cartList.appendChild(tableRow);
   });
+  // Elimina cualquier badge existente antes de crear uno nuevo
+  const oldBadge = cartButtonIcon.querySelector(".badgeCart");
+  if (oldBadge) {
+    oldBadge.remove();
+  }
+
+  if (totalCount >= 1) {
+    const badge = document.createElement("span")
+    badge.textContent = totalCount
+    badge.classList.add("badgeCart")
+    cartButtonIcon.appendChild(badge)
+  }
 }
 
 function clearHtml() {
