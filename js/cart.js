@@ -179,6 +179,11 @@ function clearHtml() {
   while (cartList.firstChild) {
     cartList.removeChild(cartList.firstChild);
   }
+    // Elimina cualquier badge existente antes de crear uno nuevo
+  const oldBadge = cartButtonIcon.querySelector(".badgeCart");
+  if (oldBadge) {
+    oldBadge.remove();
+  }
 }
 
 function removeProduct(e) {
@@ -205,4 +210,5 @@ function clearCart(e) {
   e.preventDefault();
   cartArticles = [];
   clearHtml();
+  toggleVisibleCart()
 }
